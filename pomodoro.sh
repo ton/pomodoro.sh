@@ -14,7 +14,7 @@ short_break_secs=$((60 * short_break_mins))
 long_break_secs=$((60 * long_break_mins))
 work_secs=$((60 * work_mins))
 
-# Count down the number of seconds to work
+# Count down the number of seconds to work.
 do_work() {
     n=$1 # number of seconds to work
     while [ "$n" -gt "0" ]; do
