@@ -28,7 +28,12 @@ do_work() {
 # the start of the break.
 do_break() {
     n=$1 # number of seconds to break
-    notify-send 'Time for a break.' -t $((1000 * n))
+
+    if [ "$n" -eq "$short_break_secs" ]; then
+        notify-send 'Time for a short break.' -t $((1000 * n))
+    else
+        notify-send 'Time for a long break.' -t $((1000 * n))
+    fi
 
     while [ "$n" -gt "0" ]; do
         printf "On break, %d seconds to go...   \r" "$n"
